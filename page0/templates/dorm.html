@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container-head">
+            <h1>Hotel Xyz Inn</h1>
+        </div>
+        <div class="floor">
+            {% if 'U1' in booked %}
+            <a class="booked" href="/c/U1">U1</a>
+            {% else %}
+            <a href="/U1">U1</a>
+            {% endif %}
+            {% if 'U2' in booked %}
+            <a class="booked" href="/c/U2">U2</a>
+            {% else %}
+            <a href="/U2">U2</a>
+            {% endif %}
+            {% if 'U3' in booked %}
+            <a class="booked" href="/c/U3">U3</a>
+            {% else %}
+            <a href="/U3">U3</a>
+            {% endif %}
+            {% if 'U4' in booked %}
+            <a class="booked" href="/c/U4">U4</a>
+            {% else %}
+            <a href="/U4">U4</a>
+            {% endif %}
+            {% if 'U5' in booked %}
+            <a class="booked" href="/c/U5">U5</a>
+            {% else %}
+            <a href="/U5">U5</a>
+            {% endif %}
+            {% if 'U6' in booked %}
+            <a class="booked" href="/c/U6">U6</a>
+            {% else %}
+            <a href="/U6">U6</a>
+            {% endif %}
+            {% if 'U7' in booked %}
+            <a class="booked" href="/c/U7">U7</a>
+            {% else %}
+            <a href="/U7">U7</a>
+            {% endif %}
+            {% if 'U8' in booked %}
+            <a class="booked" href="/c/U8">U8</a>
+            {% else %}
+            <a href="/U8">U8</a>
+            {% endif %}
+            {% if 'U9' in booked %}
+            <a class="booked" href="/c/U9">U9</a>
+            {% else %}
+            <a href="/U9">U9</a>
+            {% endif %}
+            {% if 'U10' in booked %}
+            <a class="booked" href="/c/U10">U9</a>
+            {% else %}
+            <a href="/U10">U10</a>
+            {% endif %}
+        </div>
+        <div class="floor">
+            {% if 'L1' in booked %}
+            <a class="booked" href="/c/L1">L1</a>
+            {% else %}
+            <a href="/L1">L1</a>
+            {% endif %}
+            {% if 'L2' in booked %}
+            <a class="booked" href="/c/L2">L2</a>
+            {% else %}
+            <a href="/L2">L2</a>
+            {% endif %}
+            {% if 'L3' in booked %}
+            <a class="booked" href="/c/L3">L3</a>
+            {% else %}
+            <a href="/L3">L3</a>
+            {% endif %}
+            {% if 'L4' in booked %}
+            <a class="booked" href="/c/L4">L4</a>
+            {% else %}
+            <a href="/L4">L4</a>
+            {% endif %}
+            {% if 'L5' in booked %}
+            <a class="booked" href="/c/L5">L5</a>
+            {% else %}
+            <a href="/L5">L5</a>
+            {% endif %}
+            {% if 'L6' in booked %}
+            <a class="booked" href="/c/L6">L6</a>
+            {% else %}
+            <a href="/L6">L6</a>
+            {% endif %}
+            {% if 'L7' in booked %}
+            <a class="booked" href="/c/L7">L7</a>
+            {% else %}
+            <a href="/L7">L7</a>
+            {% endif %}
+            {% if 'L8' in booked %}
+            <a class="booked" href="/c/L8">L8</a>
+            {% else %}
+            <a href="/L8">L8</a>
+            {% endif %}
+            {% if 'L9' in booked %}
+            <a class="booked" href="/c/L9">L9</a>
+            {% else %}
+            <a href="/L9">L9</a>
+            {% endif %}
+            {% if 'L10' in booked %}
+            <a class="booked" href="/c/L10">L9</a>
+            {% else %}
+            <a href="/L10">L10</a>
+            {% endif %}
+        </div>
+    </div>
+    <script>
+        document.getElementsByClassName('container-head')[0].onclick = () => {
+            window.location = '/'
+        }
+    </script>
+</body>
+</html>

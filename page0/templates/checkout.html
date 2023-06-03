@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room No.: {{roomno}} | Hotel Xyz Inn</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container-head">
+            <h1>Hotel Xyz Inn</h1>
+        </div>
+        <div class="container-form">
+            <div class="floor">
+
+            </div>
+            <form action="/c/{{data.1}}" method="post" autocomplete="off">
+                {% csrf_token %}
+                <input type="hidden" name="index" value="{{index}}">
+                <div class="form-input">
+                    <label>Sl No.: </label>
+                    <input type="number" name="SlNo" value="{{data.0}}" required/>
+                </div>
+                <div class="form-input">
+                    <label>Room No.: </label>
+                    <input type="text" name="roomno" value="{{data.1}}" required/>
+                </div>
+                <div class="form-input">
+                    <label>Name</label>
+                    <input type="text" name="name" value="{{data.2}}" required/>
+                </div>
+                <div class="form-input">
+                    <label>Address</label>
+                    <input type="text" name="address" value="{{data.3}}" required/>
+                </div>
+                <div class="form-input">
+                    <label>ID Type: </label>
+                    <input type="text" name="idType" value="{{data.4}}"  required/>
+                </div>
+                <div class="form-input">
+                    <label> ID No.: </label>
+                    <input type="text" name="idNum" value="{{data.5}}" required/>
+                </div>
+                <div class="form-input">
+                    <label> Purpose Of Visit </label>
+                    <input type="text" name="pov" value="{{data.6}}" required/>
+                </div>
+                <div class="form-input">
+                    <label>Phone No.: </label>
+                    <input type="text" name="phone" value="{{data.7}}" required/>
+                </div>
+                <div class="form-input">
+                    <label>Check In Time: </label>
+                    <input type="datetime-local" name="checkin" value="{{data.8}}" required />
+                </div>
+                <div class="form-input">
+                    <label>Check Out Time: </label>
+                    <input type="datetime-local" name="checkout" />
+                </div>
+                <div class="form-button">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementsByClassName('container-head')[0].onclick = () => {
+            window.location = '/'
+        }
+        document.getElementsByName('SlNo')[0].focus()
+        const d = new Date()
+        const checkin = new Date("{{data.8}}")
+        document.getElementsByClassName('floor')[0].innerText = ((d-checkin)/3600000).toFixed(2) + 'hrs passed'
+    </script>
+</body>
+</html>
