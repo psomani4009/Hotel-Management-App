@@ -12,7 +12,7 @@ def home(request):
         pd.read_csv('data.csv')
     except:
         f = open('data.csv', 'w')
-        f.write('SlNo,roomno,name,address,idType,idNum,phone,checkin,checkout')
+        f.write('SlNo,roomno,name,address,idType,idNum,pov,phone,checkin,checkout')
         f.close()
     f = open("data.csv")
     r = f.read().split('\n')[1:]
@@ -29,7 +29,7 @@ def dorm(request):
         pd.read_csv('data.csv')
     except:
         f = open('data.csv', 'w')
-        f.write('SlNo,roomno,name,address,idType,idNum,phone,checkin,checkout')
+        f.write('SlNo,roomno,name,address,idType,idNum,pov,phone,checkin,checkout')
         f.close()
     f = open("data.csv")
     r = f.read().split('\n')[1:]
@@ -94,6 +94,7 @@ def gen(request):
         head.alignment = 1
         doc.add_paragraph('Date: ')
         table = doc.add_table(rows=1, cols=7)
+        table.style = "Table Grid"
         row = table.rows[0].cells
         row[0].text = "Sl. No."
         row[1].text = "Name"
